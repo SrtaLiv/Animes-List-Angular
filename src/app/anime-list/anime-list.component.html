@@ -1,0 +1,15 @@
+<h1>Seccion animes</h1>
+<h2>ahsd</h2>
+@for (anime of animes; track anime._id) {
+  <h3>{{anime.name}}</h3>
+  <p>{{anime.description}}</p>
+  <p>Likes: {{anime.quantity}}</p>
+  <!-- <p><button type="button" class="btn btn-outline-primary" (click)="navegate(anime._id)">Detalles</button></p> -->
+} 
+
+@empty {
+  <tr>
+    <td colspan="4">No hay animes para ver.</td>
+  </tr>
+}
+

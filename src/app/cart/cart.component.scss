@@ -1,0 +1,25 @@
+.cart-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  h1, p {
+    text-align: center;
+  }
+  
+  table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+  }
+  
+  td {
+    padding: 10px;
+    border: 1px solid #ccc;
+  }
+  
+  button {
+    margin-right: 10px;
+  }
+  

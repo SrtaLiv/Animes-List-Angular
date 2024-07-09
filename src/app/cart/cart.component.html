@@ -1,0 +1,21 @@
+<div class="cart-container">
+
+<h1>CARRITO ANIMES</h1>
+<p>Lista de animes: {{animes.length}}</p>
+@for (anime of animes; track anime._id) {
+  <td>
+    <h3>{{ anime.name }}</h3>
+    <div>
+    <button>VER AHORA</button>
+    <button (click)="removeFromCart(anime)">
+        <span aria-hidden="true">-</span>
+    </button>
+  </div>
+</td>
+
+} @empty {
+  <tr>
+    <td colspan="4">No hay animes guardados.</td>
+  </tr>
+}
+</div>
