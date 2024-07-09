@@ -22,6 +22,7 @@ export class AnimeComponent implements OnInit{
   private _route = inject(ActivatedRoute);
 
   private _dataService = inject(DataService); //Servicio de animes
+  private _cartService = inject(AnimeCartService); //Servicio de animes
 
 
   ngOnInit(): void {
@@ -33,6 +34,9 @@ export class AnimeComponent implements OnInit{
     })
   }
 
+  removeFromCart(): void{
+    console.log("reproduciendo ...")
+  }
 
 
 

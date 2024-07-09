@@ -4,12 +4,12 @@ import { DataService } from '../services/data-service.service';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { AnimeCartService } from '../services/anime-cart.service';
-
+import { CartComponent } from '../cart/cart.component';
 
 @Component({
   selector: 'app-anime-list',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, CartComponent],
   templateUrl: './anime-list.component.html',
   styleUrl: './anime-list.component.scss',
   providers: [DataService]

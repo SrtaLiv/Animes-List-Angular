@@ -5,7 +5,7 @@ import { CartComponent } from './cart/cart.component';
 import { AnimeComponent } from './anime/anime.component';
 
 export const routes: Routes = [
-
+    {path: '', component: AnimeListComponent},
     {path: 'animes', component: AnimeListComponent},
     {path: 'animes/:id', component: AnimeComponent},
     {path: 'lista', component: CartComponent},
