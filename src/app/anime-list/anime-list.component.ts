@@ -18,7 +18,7 @@ export class AnimeListComponent implements OnInit {
   animes: Anime[] = [];
   private _dataService = inject(DataService);
 
-  // private _cartService = inject(AnimeCartService);
+  private _cartService = inject(AnimeCartService);
   private _router = inject(Router);
 
 
@@ -30,28 +30,28 @@ ngOnInit(): void {
   );
 }
 
-// navegate(id: number): void {
-//   this._router.navigate(['/animes', id]);
-// }
+navegate(id: number): void {
+  this._router.navigate(['/animes', id]);
+}
 
 
-  // upQuantity(anime: Anime) {
-  //   anime.quantity++;
-  // }
+  upQuantity(anime: Anime) {
+    anime.quantity++;
+  }
 
-  // downQuantity(anime: Anime) {
-  //   if (anime.quantity > 0) {
-  //     anime.quantity--;
-  //   }
-  // }
+  downQuantity(anime: Anime) {
+    if (anime.quantity > 0) {
+      anime.quantity--;
+    }
+  }
 
-  // addToCart(anime: Anime) {
-  //   this._cartService.addToCart(anime);
-  // }
+  addToCart(anime: Anime) {
+    this._cartService.addToCart(anime);
+  }
 
-  // remoteToCart(anime: Anime) {
-  //   this._cartService.removeFromCart(anime);
-  // }
+  remoteToCart(anime: Anime) {
+    this._cartService.removeFromCart(anime);
+  }
 
 
 }

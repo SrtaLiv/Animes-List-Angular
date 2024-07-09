@@ -16,8 +16,6 @@ export class DataService {
     return this._http.get<Anime[]>(this.apiUrl);
   }
 
- 
-
   public getAnimeById(id: number) : Observable<any>{
     return this._http.get<Anime>(`${this.apiUrl}/${id}`);
   }

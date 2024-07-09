@@ -10,7 +10,8 @@ import { AnimeCartService } from '../services/anime-cart.service';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './anime.component.html',
-  styleUrl: './anime.component.scss'
+  styleUrl: './anime.component.scss',
+  providers: [DataService] //agregar esto si o si
 })
 export class AnimeComponent implements OnInit{
 
@@ -19,8 +20,8 @@ export class AnimeComponent implements OnInit{
   id = signal<number | undefined>(undefined); //estudiar
 
   private _route = inject(ActivatedRoute);
+
   private _dataService = inject(DataService); //Servicio de animes
-  private _animeCartService = inject(AnimeCartService) //Carrito de animes
 
 
   ngOnInit(): void {

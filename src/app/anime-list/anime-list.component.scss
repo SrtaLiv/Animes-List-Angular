@@ -1,0 +1,25 @@
+.anime-list{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: normal;
+    justify-content: center;
+    gap: 10px;
+}
+
+.anime-item{
+    width: fit-content;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: rgb(45, 44, 46);
+    transition: transform 0.3s ease-in-out;
+    color: white;
+    padding: 2px;
+    width: 25%;
+    border: 6px solid pink;
+    border-radius: 12px;
+}
+
+.anime-item:hover{
+    background-color: #0db0c957;
+    background-image: url('/public/images/spotify-logo-inicio.png');
+}
