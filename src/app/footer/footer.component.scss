@@ -1,0 +1,48 @@
+
+footer{
+    height: 100vh;    
+    position: static;
+    bottom: 0;
+    background-color: pink;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 30vh;
+
+    .contenedor-footer{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        border-radius: 20px;
+        height: 50vh;
+        width: 50%;
+        align-items: center;
+        
+        .icons-footer{
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            a{
+                display: flex;
+                justify-content: space-around;
+                animation: mover 3s linear infinite alternate;
+            }
+            a:hover{
+                color: themed("bg");
+            }
+            // .delay{
+            //     animation-delay: 1s;
+            // }
+            
+            // @keyframes mover {
+            //     from {
+            //     transform: translateY(-10px);
+            //     }
+            //     to {
+            //     transform: translateY(10px);
+            //     }
+            // }
+    }
+}
+}

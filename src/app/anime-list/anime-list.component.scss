@@ -1,3 +1,17 @@
+.home{
+    display: flex;
+    flex-direction: row;  
+    padding: 20px;  
+}
+
+.anime-container{
+    display: flex;
+    flex-direction: column;
+    align-content: normal;
+    justify-content: center;
+    text-align: center;
+}
+
 .anime-list{
     display: flex;
     flex-direction: row;
@@ -26,3 +40,4 @@
 .card-btn{
     display: flex;
 }
+
