@@ -12,7 +12,6 @@ export class DataService {
   private apiUrl = 'https://648ca9fe8620b8bae7ed370f.mockapi.io/anime'; //Api e anime
 
   public getAnimes(): Observable<Anime[]> {
-    // fetch('url', {method: 'GET'})
     return this._http.get<Anime[]>(this.apiUrl);
   }
 
