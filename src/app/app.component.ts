@@ -2,15 +2,21 @@ import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { FormsModule } from '@angular/forms';
-import { FooterComponent } from "./footer/footer.component";
+import { FooterComponent } from "./pages/footer/footer.component";
+import { CarouselComponent } from './pages/carousel/carousel.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
+import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, RouterLink, RouterLinkActive, FormsModule, NgOptimizedImage, FooterComponent],
+  imports: [CommonModule, RouterOutlet, RouterLink, RouterLinkActive, FormsModule, NgOptimizedImage, FooterComponent, CarouselComponent, FontAwesomeModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'routing-app';
+  faCoffee = faCoffee;
+
 }
+

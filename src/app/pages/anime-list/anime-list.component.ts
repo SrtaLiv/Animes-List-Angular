@@ -1,10 +1,10 @@
 import { Component, OnInit, inject } from '@angular/core';
-import { Anime } from '../interface/anime.interface';
-import { DataService } from '../services/data-service.service';
+import { Anime } from '../../interface/anime.interface';
+import { DataService } from '../../services/data-service.service';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
-import { AnimeCartService } from '../services/anime-cart.service';
-import { CartComponent } from '../cart/cart.component';
+import { AnimeCartService } from '../../services/anime-cart.service';
+import { CartComponent } from '../../cart/cart.component';
 
 @Component({
   selector: 'app-anime-list',

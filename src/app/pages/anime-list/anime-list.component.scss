@@ -1,0 +1,56 @@
+.home {
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
+
+    .anime-container {
+        display: flex;
+        flex-direction: column;
+        align-content: normal;
+        justify-content: center;
+        text-align: center;
+        height: 100%;
+
+        li{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-content: normal;
+            justify-content: center;
+            transition-duration: 2s;
+            transition-property: background-color, color, transform;
+
+            .anime-item {
+                width: fit-content;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+                background-color: rgb(45, 44, 46);
+                transition: transform 0.3s ease-in-out;
+                color: white;
+                padding: 2px;
+                border: 6px solid rgb(255, 255, 255);
+                border-radius: 16px;
+                transition-duration: 2s;
+              
+                figure{
+                    position: relative;
+                }
+                    
+                .title {
+                    background-color: #07070754;
+                }
+
+                ul,
+                li {
+                    list-style-position: outside;
+                }
+
+                
+                
+            }
+        }
+      
+    }
+}
+
+

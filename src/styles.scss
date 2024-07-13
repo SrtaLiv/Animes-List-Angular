@@ -1,1 +1,28 @@
 /* You can add global styles to this file, and also import other style files */
+
+$primary: #37AB00;
+$text: #FBFEF4;
+$text2: #FFF;
+
+$preto-transparent-30: #0000004D;
+$preto-transparent-20: #00000033;
+$preto-transparent-03: #00000008;
+$preto-transparent-70: #000000b3;
+
+body{
+    background-color: #F2F2F2;
+    background-color: pink;
+}
+
+img{
+    max-width: 100%;
+    border: 0;
+}
+
+li{
+    list-style: none;
+}
+html{
+
+    font-family: open sans, sans-serif;
+}

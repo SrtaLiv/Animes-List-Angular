@@ -1,9 +1,9 @@
 import { Component, Input, OnInit, inject, signal } from '@angular/core';
-import { Anime } from '../interface/anime.interface';
+import { Anime } from '../../interface/anime.interface';
 import { ActivatedRoute } from '@angular/router';
-import { DataService } from '../services/data-service.service';
+import { DataService } from '../../services/data-service.service';
 import { CommonModule } from '@angular/common';
-import { AnimeCartService } from '../services/anime-cart.service';
+import { AnimeCartService } from '../../services/anime-cart.service';
 
 @Component({
   selector: 'app-anime',

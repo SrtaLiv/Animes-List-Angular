@@ -1,15 +1,23 @@
 <div class="home">
+
   <div class="anime-container">
     <h1>Últimos animes</h1>
+    
     <h3>Proximamente incorporar una Api de animes ... </h3>
-    <div class="anime-list">
+    <ul class="anime-list">
       @for (anime of animes; track anime._id) {
+      <!-- <a href='/anime/' + {{anime.name}}> -->
+      <li class="anime-item">
+        <article>
+          <span class="estreno">
+            <span>Estreno</span>
+          </span>
+          
+          <figure>
+            <img [src]="anime.image" alt="" />
+          </figure>
 
-        <div class="anime-item" [style.background-image]="'url(' + anime.image + ')'">
-          <h3 class="title">{{anime.name}}</h3>
-          <!-- <img [src]="anime.image" alt="" /> -->
-
-          <div class="card-btn">
+          <div>
             <p><button type="button" class="btn btn-outline-primary" (click)="navegate(anime._id)">Ver ahora</button>
             </p>
             <button type="button" class="btn btn-outline-primary" (click)="addToCart(anime)">
@@ -20,15 +28,19 @@
               </svg>
             </button>
           </div>
-        </div>
+          <figure>
+          </figure>
+          <span>ANIME</span>
+          <h3 class="title">{{anime.name}}</h3>
+        </article>
+      </li>
       }
-
       @empty {
       <tr>
         <td colspan="4">No hay animes para ver.</td>
       </tr>
       }
-    </div>
+    </ul>
   </div>
 
   <app-cart></app-cart>
