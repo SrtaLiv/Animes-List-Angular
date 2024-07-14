@@ -12,7 +12,7 @@ import { NavComponent } from "./pages/nav/nav.component";
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, RouterLink, RouterLinkActive, FormsModule, NgOptimizedImage, FooterComponent, CarouselComponent, FontAwesomeModule, NavComponent, NavComponent],
+  imports: [CommonModule, RouterOutlet, RouterLink, RouterLinkActive, FormsModule, NgOptimizedImage, FooterComponent, CarouselComponent, FontAwesomeModule, NavComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
