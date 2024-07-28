@@ -3,7 +3,7 @@
   <p>Guardados: {{animes.length}}</p>
   
   <ul class="favorito-list">
-    @for (anime of animes; track anime._id) {
+    @for (anime of animes; track anime.id) {
     <li>
       <div>
         <button type="button" class="btn btn-outline-primary" (click)="removeFromCart(anime)">
@@ -14,7 +14,7 @@
             </svg> </span>
         </button>
       </div>
-      <p>{{ anime.name }}</p>
+      <p>{{ anime.title }}</p>
     </li>
   } 
   @empty {

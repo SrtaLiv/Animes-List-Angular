@@ -1,5 +1,5 @@
 import { Component, OnInit, inject } from '@angular/core';
-import { Anime } from '../../interface/anime.interface';
+import { IAnime } from '../../interface/anime.interface';
 import { DataService } from '../../services/data-service.service';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
@@ -15,7 +15,7 @@ import { CartComponent } from '../../cart/cart.component';
   providers: [DataService]
 })
 export class AnimeListComponent implements OnInit {
-  animes: Anime[] = [];
+  animes: IAnime[] = [];
   private _dataService = inject(DataService);
 
   private _cartService = inject(AnimeCartService);
@@ -23,33 +23,34 @@ export class AnimeListComponent implements OnInit {
 
 
 ngOnInit(): void {
-  this._dataService.getAnimes().subscribe((data: Anime[]) => {
+  this._dataService.getAnimes().subscribe((data: IAnime[]) => {
     console.log(data)
     this.animes = data;
   }
   );
 }
 
-navegate(id: number): void {
+navegate(id: string): void {
   this._router.navigate(['/animes', id]);
 }
+//d6bd6efc-37b2-4c40-b092-367cea8c88fe
 
 
-  upQuantity(anime: Anime) {
+  upQuantity(anime: IAnime) {
     anime.quantity++;
   }
 
-  downQuantity(anime: Anime) {
+  downQuantity(anime: IAnime) {
     if (anime.quantity > 0) {
       anime.quantity--;
     }
   }
 
-  addToCart(anime: Anime) {
+  addToCart(anime: IAnime) {
     this._cartService.addToCart(anime);
   }
 
-  remoteToCart(anime: Anime) {
+  remoteToCart(anime: IAnime) {
     this._cartService.removeFromCart(anime);
   }
 

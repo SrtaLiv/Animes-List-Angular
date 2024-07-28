@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Anime } from '../interface/anime.interface';
+import { IAnime } from '../interface/anime.interface';
 
 // @Injectable({
 //   providedIn: 'root'
@@ -9,13 +9,13 @@ import { Anime } from '../interface/anime.interface';
 @Injectable()
 export class DataService {
   private _http = inject(HttpClient);
-  private apiUrl = 'https://648ca9fe8620b8bae7ed370f.mockapi.io/anime'; //Api e anime
+  private apiUrl = 'https://ghibli.rest/films'; //Api e anime
 
-  public getAnimes(): Observable<Anime[]> {
-    return this._http.get<Anime[]>(this.apiUrl);
+  public getAnimes(): Observable<IAnime[]> {
+    return this._http.get<IAnime[]>(this.apiUrl);
   }
 
-  public getAnimeById(id: number) : Observable<any>{
-    return this._http.get<Anime>(`${this.apiUrl}/${id}`);
+  public getAnimeById(id: string) : Observable<IAnime>{
+    return this._http.get<IAnime>(`${this.apiUrl}?id?=${id}`);
   }
 }

@@ -1,21 +1,22 @@
-@if (loading) {
+<!-- @if (loading) {
     <h5>Loading...</h5>
 }
 
 @if (!loading) {
       <div class="card" style="width: 18rem;">
+        <h1>{{anime?.title}}</h1>
         <img [src]="anime?.image" alt="" />
+        <img src="{{anime?.image}}" alt="">
         <div class="card-body">
-          <h5 class="card-title">{{anime?.name}}</h5>
-          <p>Likes: {{anime?.quantity}}</p>
+          <h5 class="card-title">{{anime?.title}}</h5>
 
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <p class="card-text">Hla quick example text to build on the card title and make up the bulk of the card's content.</p>
           <button (click)="removeFromCart()" class="btn btn-primary">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-play-circle" viewBox="0 0 16 16">
               <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
               <path d="M6.271 5.055a.5.5 0 0 1 .52.038l3.5 2.5a.5.5 0 0 1 0 .814l-3.5 2.5A.5.5 0 0 1 6 10.5v-5a.5.5 0 0 1 .271-.445"/>
             </svg>
-            Reproducir
+            {{anime?.description}}
           </button>
         </div>
       </div>
@@ -24,4 +25,25 @@
         <li>Episodio 2</li>
         <li>Episodio 1</li>
       </ul>
-}
+} -->
+
+<div class="container d-flex justify-content-center mt-5">
+  @if (id() && id() != '3') {
+  <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <h1>{{anime?.title}}</h1>
+          <h5 class="card-title">El usuario es el {{id()}}</h5>
+          <h5>{{anime?.title}}</h5>
+          <h5>{{anime?.title}}</h5>
+          <h6 class="card-subtitle mb-2 text-muted">Bienvenido a su detalle</h6>
+          <p class="card-text">Detalle del usuario seleccionado con contenido del perfil</p>
+          <a href="#" class="card-link">Más información</a>
+          <a href="#" class="card-link">Borrar Usuario</a>
+      </div>
+  </div>
+  } @else if (id () && id() == '3') {
+  <h1>El usuario ha sido eliminado</h1>
+  } @else {
+  <h1>No se ha seleccionado ningún usuario</h1>
+  }
+</div>

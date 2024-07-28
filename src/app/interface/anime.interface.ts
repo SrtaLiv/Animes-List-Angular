@@ -1,10 +1,20 @@
-export interface Anime {
-    _id: number;
-    name: string;
-    description: string;
-    price: number;
-    category: string;
-    image: 'https://ethic.es/wp-content/uploads/2023/03/';
-    active: boolean;
-    quantity: number
+export interface IAnime {
+    id:                       string;
+    title:                    string;
+    original_title:           string;
+    original_title_romanised: string;
+    image:                    string;
+    movie_banner:             string;
+    description:              string;
+    director:                 string;
+    producer:                 string;
+    release_date:             string;
+    running_time:             string;
+    rt_score:                 string;
+    people:                   string[];
+    species:                  string[];
+    locations:                string[];
+    vehicles:                 string[];
+    url:                      string;
+    quantity: number;
 }

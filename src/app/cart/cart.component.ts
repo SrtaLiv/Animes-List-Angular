@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Anime } from '../interface/anime.interface';
+import { IAnime } from '../interface/anime.interface';
 import { AnimeCartService } from '../services/anime-cart.service';
 
 @Component({
@@ -11,21 +11,21 @@ import { AnimeCartService } from '../services/anime-cart.service';
   styleUrls: ['./cart.component.scss']
 })
 export class CartComponent implements OnInit {
-  animes: Anime[] = [];
+  animes: IAnime[] = [];
 
   constructor(private animeCartService: AnimeCartService) {}
 
   ngOnInit() {
-    this.animeCartService.items.subscribe((animes: Anime[]) => { 
+    this.animeCartService.items.subscribe((animes: IAnime[]) => { 
       this.animes = animes;
     });
   }
 
-  addToCart(anime: Anime) {
+  addToCart(anime: IAnime) {
     this.animeCartService.addToCart(anime);
   }
 
-  removeFromCart(anime: Anime) {
+  removeFromCart(anime: IAnime) {
     this.animeCartService.removeFromCart(anime);
   }
 

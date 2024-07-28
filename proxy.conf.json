@@ -1,0 +1,7 @@
+{
+  "/api": {
+    "target": "https://lendrive.web.id",
+    "secure": false,
+    "changeOrigin": true
+  }
+}

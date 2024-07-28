@@ -1,18 +1,18 @@
 import { Injectable } from '@angular/core';
 import { Observable, BehaviorSubject } from 'rxjs';
-import { Anime } from '../interface/anime.interface';
+import { IAnime } from '../interface/anime.interface';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AnimeCartService {
 
-  private _items: Anime[] = [];
-  private _itemsSubject: BehaviorSubject<Anime[]> = new BehaviorSubject(this._items);
-  public items: Observable<Anime[]> = this._itemsSubject.asObservable();
+  private _items: IAnime[] = [];
+  private _itemsSubject: BehaviorSubject<IAnime[]> = new BehaviorSubject(this._items);
+  public items: Observable<IAnime[]> = this._itemsSubject.asObservable();
 
-  addToCart(anime: Anime) {
-    const existingAnime = this._items.find(item => item._id === anime._id);
+  addToCart(anime: IAnime) {
+    const existingAnime = this._items.find(item => item.id === anime.id);
     if (existingAnime) {
       existingAnime.quantity += 1;
     } else {
@@ -21,8 +21,8 @@ export class AnimeCartService {
     this._itemsSubject.next(this._items);
   }
 
-  removeFromCart(anime: Anime) {
-    this._items = this._items.filter(item => item._id !== anime._id);
+  removeFromCart(anime: IAnime) {
+    this._items = this._items.filter(item => item.id !== anime.id);
     this._itemsSubject.next(this._items);
   }
 

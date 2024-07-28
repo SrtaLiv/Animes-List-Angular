@@ -5,7 +5,8 @@ import { CartComponent } from './cart/cart.component';
 import { AnimeComponent } from './pages/anime/anime.component';
 import { CarouselComponent } from './pages/carousel/carousel.component';
 import { FooterComponent } from './pages/footer/footer.component';
-import { AnimeComponent2 } from './anime2.0/anime/anime.component';
+import { Component } from '@angular/core';
+import { LoginComponent } from './login/login/login.component';
 
 export const routes: Routes = [
     {path: '', component: AnimeListComponent},
@@ -14,6 +15,6 @@ export const routes: Routes = [
     {path: 'lista', component: CartComponent},
     {path: 'carousel', component: CarouselComponent},
     {path: 'footer', component: FooterComponent},
-    {path: 'anime2', component: AnimeComponent2},
+    {path: 'login', component: LoginComponent},
     {path: '**', component: PageNotFoundComponent},
 ];

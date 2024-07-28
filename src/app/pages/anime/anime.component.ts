@@ -1,5 +1,5 @@
 import { Component, Input, OnInit, inject, signal } from '@angular/core';
-import { Anime } from '../../interface/anime.interface';
+import { IAnime } from '../../interface/anime.interface';
 import { ActivatedRoute } from '@angular/router';
 import { DataService } from '../../services/data-service.service';
 import { CommonModule } from '@angular/common';
@@ -16,8 +16,8 @@ import { AnimeCartService } from '../../services/anime-cart.service';
 export class AnimeComponent implements OnInit{
 
   loading:boolean = true;
-  public anime?: Anime;
-  id = signal<number | undefined>(undefined); //estudiar
+  public anime?: IAnime;
+  id = signal<string | undefined>(undefined); //estudiar
 
   private _route = inject(ActivatedRoute);
 
@@ -25,13 +25,35 @@ export class AnimeComponent implements OnInit{
   private _cartService = inject(AnimeCartService); //Servicio de animes
 
 
+  // ngOnInit(): void {
+  //   this._route.params.subscribe(params => {
+  //     this._dataService.getAnimeById(params['id']).subscribe((data: IAnime) => {
+  //       this.anime = data;
+  //       this.loading = false;
+  //     })
+  //   })
+  // }
+
   ngOnInit(): void {
     this._route.params.subscribe(params => {
-      this._dataService.getAnimeById(params['id']).subscribe((data: Anime) => {
-        this.anime = data;
-        this.loading = false;
-      })
+      this.id.set(params['id']);
+      this.fetchAnimeDetails(params['id']);
+
     })
+  }
+  fetchAnimeDetails(id: string): void {
+    if (id && id !== '3') {
+      this._dataService.getAnimeById(id).subscribe(
+        (data: IAnime) => {
+          this.anime = data;
+          this.loading = false;
+        },
+        error => {
+          console.error('Error fetching anime details', error);
+          this.loading = false;
+        }
+      );
+    }
   }
 
   removeFromCart(): void{
